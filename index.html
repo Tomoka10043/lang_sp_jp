@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>일본어 1일 체험 수업 모집</title>
+<style>
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.4;
+    background-color: #fff8f0;
+    color: #333;
+    margin: 0;
+    padding: 10px;
+  }
+
+  .container {
+    max-width: 420px;
+    margin: 10px auto;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  h1 {
+    color: #e75480;
+    font-size: 1.3rem;
+    margin: 0 0 5px 0;
+  }
+
+  p.subtitle {
+    color: #666;
+    font-size: 0.85rem;
+    margin: 0 0 15px 0;
+  }
+
+  .section {
+    margin-bottom: 15px;
+    padding: 18px;
+    background-color: #fff0f5;
+    border-radius: 10px;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  .section h2 {
+    color: #d1477b;
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    display: inline-block;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+
+  .section li {
+    margin-bottom: 6px;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .section li .highlight {
+    /* --- 調整ポイント：幅を完全に固定 --- */
+    min-width: 35px; /* ラベル幅を極限まで狭く */
+    width: 35px;
+    margin-right: 5px; /* ラベルと内容の固定空白 */
+    /* --------------------------------- */
+    display: inline-block;
+    color: #e75480;
+    font-weight: bold;
+    flex-shrink: 0;
+    text-align: left;
+  }
+
+  .section li .content {
+    flex-grow: 1;
+    white-space: normal;
+  }
+
+  .contact {
+    background-color: #fef4f8;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    text-align: left;
+    font-size: 0.85rem;
+    box-sizing: border-box;
+    display: block;
+    white-space: normal;
+  }
+
+  .qr-link {
+    color: #e75480;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .click-label {
+    color: red; 
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>일본어와 친해지는 시간! 🌸</h1>
+    <p class="subtitle">1일 체험 수업 모집 — 일본어,<br> 
+     어렵게 느껴졌다면 편하게 시작하세요!</p>
+
+    <div class="section">
+      <h2>🧑‍🤝‍🧑 친구와 함께! 그룹 수업</h2>
+      <ul>
+        <li><span class="highlight">일시:</span> <span class="content">3월 31일 화요일 11:00 ~ 11:50</span></li>
+        <li><span class="highlight">장소:</span> <span class="content">나비 우동 근처 카페</span></li>
+        <li><span class="highlight">금액:</span> <span class="content">1만 원 (수업 참여 후 9천 원 페이백 → 사실상 1천 원!)</span></li>
+        <li><span class="highlight">내용:</span> <span class="content">히라가나부터 시작, 인사말과 간단한 회화</span></li>
+        <li><span class="highlight">인원:</span> <span class="content">선착순 4명</span></li>
+        <span style="color: red; font-weight: bold;">※체험 수업 예약은 29일까지, 30일부터는 다음 수업 안내</span>
+      </ul>
+      <div class="contact">
+        📩 카카오 ID: 
+        <a href="qrcode.png" class="qr-link" id="qrLink1">Tomka10043</a> 
+        <span class="click-label">← 클릭!</span><br><br>
+        ※계좌번호 등은 수업 확정 후 안내! 체험 후, 수업 내용 완벽 안내!
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>👤 나에게 딱 맞춰! 개인 수업</h2>
+      <ul>
+        <li><span class="highlight">일시:</span> <span class="content">협의 후 결정 (30분간 진행)</span></li>
+        <li><span class="highlight">장소:</span> <span class="content">나비 우동 근처 카페</span></li>
+        <li><span class="highlight">금액:</span> <span class="content">1만 원 (수업 참여 후 6천 원 페이백)</span></li>
+        <li><span class="highlight">내용:</span> <span class="content">내 실력과 목적에 맞춘 맞춤형 수업</span></li>
+      </ul>
+      <div class="contact">
+        📩 카카오 ID:
+        <a href="qrcode.png" class="qr-link" id="qrLink2">Tomka10043</a> 
+        <span class="click-label">← 클릭!</span><br><br>
+        ※계좌번호 등은 수업 확정 후 안내! 체험 후, 수업 내용 완벽 안내!
+      </div>
+    </div>
+  </div>
+
+<canvas id="canvas" style="display:none;"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js"></script>
+<script>
+function setupQRScanner(linkId) {
+  const link = document.getElementById(linkId);
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+
+  link.addEventListener('click', e => {
+    e.preventDefault(); 
+    const imgSrc = link.getAttribute('href');
+    const img = new Image();
+    img.crossOrigin = "Anonymous";
+    img.onload = () => {
+      canvas.width = img.width;
+      canvas.height = img.height;
+      ctx.drawImage(img, 0, 0);
+      try {
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const code = jsQR(imageData.data, imageData.width, imageData.height);
+        if (code) {
+          window.location.href = code.data;
+        } else {
+          alert('QRコードを読み取れませんでした。');
+        }
+      } catch (err) {
+        alert('解析エラーが発生しました。');
+      }
+    };
+    img.onerror = () => { alert('画像読み込み失敗'); };
+    img.src = imgSrc;
+  });
+}
+setupQRScanner('qrLink1');
+setupQRScanner('qrLink2');
+</script>
+</body>
+</html>
