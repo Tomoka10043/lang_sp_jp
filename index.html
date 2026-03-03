@@ -133,6 +133,19 @@
       margin-bottom: 10px;
     }
   </style>
+  
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 
 <body>
@@ -151,12 +164,12 @@
         <li><span class="highlight">인원:</span> <span class="content">선착순 4명</span></li>
       </ul>
       <p style="color: red; font-weight: bold; font-size: 0.9rem; margin-top: 10px;">
-        ※1 체험 수업 예약은 29일까지, 30일부터는 다음 수업 안내
+        ※1 체험 수업 예약은 29일까지, 30일부터는 다음 수업 안내<br>
         ※2 당일 취소는 환불 불가합니다.
       </p>
       <div class="contact">
         📩 카카오 ID:
-        <a href="qrcode.png" class="qr-link" id="qrLink1">Tomka10043</a>
+        <a href="qrcode.png?v=1" class="qr-link" id="qrLink1">Tomka10043</a>
         <span class="click-label">← 클릭!</span><br><br>
         <small>※체험 수업, 카카오톡으로 편하게 신청해보세요!</small>
       </div>
@@ -175,7 +188,7 @@
       </p>
       <div class="contact">
         📩 카카오 ID:
-        <a href="qrcode.png" class="qr-link" id="qrLink2">Tomka10043</a>
+        <a href="qrcode.png?v=1" class="qr-link" id="qrLink2">Tomka10043</a>
         <span class="click-label">← 클릭!</span><br><br>
         <small>※체험 수업, 카카오톡으로 편하게 신청해보세요!</small>
       </div>
@@ -187,7 +200,7 @@
       <p class="info-item">⛩️ <b>花園神社 (하나조노 신사)</b><br>
         신주쿠 쇼핑하다 들르기 좋은 차분한 분위기의 신사예요.</b><br>
       <a href="http://hanazono-jinja.or.jp/" target="_blank" class="shrine-link"> http://hanazono-jinja.or.jp/</a></b></p>
-      <p class="info-item">🗣️ <b>요즘 일본어, '소레나(それな)'</b><br>
+      <p class="info-item">🗣️ <b>요즘 일본어, '소레나(それ나)'</b><br>
         친구와 대화할 때 "맞아!", "그니까!"처럼 맞장구칠 때 쓰는 표현이에요.</p>
       <p class="info-item">🍱 <b>일본 요리 팁</b><br>
         일본 요리는 설탕이나 미림을 써서 달콤한 맛이 특징이랍니다.</p>
@@ -195,7 +208,7 @@
   </div>
 
   <canvas id="canvas" style="display:none;"></canvas>
-  <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js?v=1"></script>
   <script>
     function setupQRScanner(linkId) {
       const link = document.getElementById(linkId);
@@ -206,7 +219,7 @@
         const imgSrc = link.getAttribute('href');
         const img = new Image();
         img.crossOrigin = "Anonymous";
-        img.onload = () => {
+        img.onload = () => {ロジー
           canvas.width = img.width;
           canvas.height = img.height;
           ctx.drawImage(img, 0, 0);
