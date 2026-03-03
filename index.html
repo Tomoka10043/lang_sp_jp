@@ -8,17 +8,17 @@
   <style>
     body {
       font-family: 'Noto Sans KR', sans-serif;
-      /* --- 1. 全体の文字を大きく & 行間をゆったり --- */
       line-height: 1.6;
       font-size: 16px;
       background-color: #fff8f0;
       color: #333;
       margin: 0;
       padding: 10px;
+      /* スクリプト判定まで隠す */
+      display: none;
     }
 
     .container {
-      /* --- 2. スマホ画面いっぱいに広げる --- */
       width: 100%;
       max-width: 480px;
       margin: 10px auto;
@@ -33,7 +33,6 @@
     h1 {
       color: #e75480;
       font-size: 1.5rem;
-      /* タイトルを強調 */
       margin: 10px 0;
     }
 
@@ -74,9 +73,7 @@
 
     .section li .highlight {
       min-width: 38px;
-      /* ここを45から38に減らす */
       margin-right: 2px;
-      /* ここを8から2に減らす */
       display: inline-block;
       color: #e75480;
       font-weight: bold;
@@ -100,7 +97,6 @@
     .qr-link {
       color: #e75480;
       text-decoration: underline;
-      /* リンクと分かりやすく */
       font-weight: bold;
       font-size: 1.1rem;
     }
@@ -111,7 +107,6 @@
       font-size: 0.9rem;
     }
 
-    /* --- 追加: 알아두면 쓸모있는 일본 정보 스타일 --- */
     .info-section {
       background-color: #f0f8ff;
       border: 2px solid #b3d9ff;
@@ -133,7 +128,7 @@
       margin-bottom: 10px;
     }
   </style>
-  
+
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
@@ -141,18 +136,33 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MK9B8TR3X3"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-MK9B8TR3X3');
+  </script>
+
+  <script>
+    (function () {
+      const secretKey = "qr_only_access"; 
+      const redirectUrl = "https://www.google.com";
+      const urlParams = new URLSearchParams(window.location.search);
+      const id = urlParams.get('id');
+
+      if (id !== secretKey) {
+        alert("에러: QR코드를 스캔하여 접속해주세요.");
+        window.location.href = redirectUrl;
+      } else {
+        // 合言葉が正しい場合のみ、bodyを表示するスタイルを追加
+        document.documentElement.style.display = 'block'; 
+      }
+    })();
   </script>
 </head>
 
 <body>
   <div class="container">
     <h1>일본어와 친해지는 시간! 🌸</h1>
-    <p class="subtitle">1일 체험 수업 모집 — 일본어,<br>
-      어렵게 느껴졌다면 편하게 시작하세요!</p>
+    <p class="subtitle">1일 체험 수업 모집 — 일본어,<br>어렵게 느껴졌다면 편하게 시작하세요!</p>
 
     <div class="section">
       <h2>🧑‍🤝‍🧑 친구와 함께! 그룹 수업</h2>
@@ -160,8 +170,7 @@
         <li><span class="highlight">일시:</span> <span class="content">3월 31일 화요일 11:00 ~ 11:50</span></li>
         <li>
           <span class="highlight">장소:</span> <span class="content">
-           <a href="https://www.instagram.com/nabi_udon/" target="_blank" class="shrine-link">나비 우동</a>
-           근처 카페
+            <a href="https://www.instagram.com/nabi_udon/" target="_blank">나비 우동</a> 근처 카페
           </span>
         </li>
         <li><span class="highlight">금액:</span> <span class="content">1만 원 (수업 참여 후 9천 원 페이백)</span></li>
@@ -186,8 +195,7 @@
         <li><span class="highlight">일시:</span> <span class="content">협의 후 결정 (30분간 진행)</span></li>
         <li>
           <span class="highlight">장소:</span> <span class="content">
-           <a href="https://www.instagram.com/nabi_udon/" target="_blank" class="shrine-link">나비 우동</a>
-           근처 카페
+            <a href="https://www.instagram.com/nabi_udon/" target="_blank">나비 우동</a> 근처 카페
           </span>
         </li>
         <li><span class="highlight">금액:</span> <span class="content">1만 원 (수업 참여 후 6천 원 페이백)</span></li>
@@ -208,9 +216,10 @@
       <h3>💡 [알아두면 쓸모있는 일본 정보]</h3>
       <p class="info-item"><b>내용은 주기적으로 새로워집니다!</b></p>
       <p class="info-item">⛩️ <b>花園神社 (하나조노 신사)</b><br>
-        신주쿠 쇼핑하다 들르기 좋은 차분한 분위기의 신사예요.</b><br>
-      <a href="https://ja.wikipedia.org/wiki/%E8%8A%B1%E5%9C%92%E7%A5%9E%E7%A4%BE" target="_blank" class="shrine-link">wiki</a></b></p>
-      <p class="info-item">🗣️ <b>요즘 일본어, '소레나(それ나)'</b><br>
+        신주쿠 쇼핑하다 들르기 좋은 차분한 분위기의 신사예요.<br>
+        <a href="https://ja.wikipedia.org/wiki/%E8%8A%B1%E5%9C%92%E7%A5%9E%E7%A4%BE" target="_blank">wiki</a>
+      </p>
+      <p class="info-item">🗣️ <b>요즘 일본어, '소레나(それな)'</b><br>
         친구와 대화할 때 "맞아!", "그니까!"처럼 맞장구칠 때 쓰는 표현이에요.</p>
       <p class="info-item">🍱 <b>일본 요리 팁</b><br>
         일본 요리는 설탕이나 미림을 써서 달콤한 맛이 특징이랍니다.</p>
@@ -222,8 +231,9 @@
   <script>
     function setupQRScanner(linkId) {
       const link = document.getElementById(linkId);
-      const canvas = document.getElementById('canvas');
+      const canvas = document.createElement('canvas');
       const ctx = canvas.getContext('2d');
+
       link.addEventListener('click', e => {
         e.preventDefault();
         const imgSrc = link.getAttribute('href');
@@ -236,9 +246,15 @@
           try {
             const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
             const code = jsQR(imageData.data, imageData.width, imageData.height);
-            if (code) window.location.href = code.data;
+            if (code) {
+              const secretParam = "id=qr_only_access";
+              const separator = code.data.includes('?') ? '&' : '?';
+              window.location.href = code.data + separator + secretParam;
+            } else {
+              alert('QR코드를 인식할 수 없습니다.');
+            }
           } catch (err) {
-            alert('에러 발생');
+            alert('에러가 발생했습니다.');
           }
         };
         img.src = imgSrc;
@@ -246,6 +262,9 @@
     }
     setupQRScanner('qrLink1');
     setupQRScanner('qrLink2');
+
+    // 正しいアクセスの時だけ表示を戻す
+    window.onload = () => { document.body.style.display = "block"; };
   </script>
 </body>
 
