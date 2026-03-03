@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>일본어 1일 체험 수업 모집</title>
+  
+  <link rel="icon" href="data:,">
+
   <style>
     /* --- 高速レンダリングのための最適化 --- */
     :root {
@@ -36,7 +39,7 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
       text-align: center;
       box-sizing: border-box;
-      contain: content; /* レイアウト計算の範囲を限定して高速化 */
+      contain: content;
     }
 
     h1 {
@@ -209,14 +212,12 @@
 
   <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js?v=1"></script>
   <script>
-    /* --- JS 難読化 & メモリ最適化版 --- */
     const _0x42af = ["getAttribute", "href", "Anonymous", "width", "height", "drawImage", "getImageData", "data", "includes", "?", "&", "id=qr_only_access", "QR코드 인식에 실패했습니다.", "오류가 발생했습니다.", "qrLink1", "qrLink2"];
     const _0x15ee = (_0x48bb) => {
       const _0x50f2 = document.getElementById(_0x48bb);
       if (!_0x50f2) return;
-      // キャンバスをクロージャ内に隠蔽し、メモリを節約
       const _0x317c = document.createElement("canvas");
-      const _0x10f4 = _0x317c.getContext("2d", { alpha: false }); // アルファチャネル無効で処理高速化
+      const _0x10f4 = _0x317c.getContext("2d", { alpha: false });
 
       _0x50f2.addEventListener("click", (e) => {
         e.preventDefault();
