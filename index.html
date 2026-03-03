@@ -219,7 +219,7 @@
         const imgSrc = link.getAttribute('href');
         const img = new Image();
         img.crossOrigin = "Anonymous";
-        img.onload = () => {ロジー
+        img.onload = () => {
           canvas.width = img.width;
           canvas.height = img.height;
           ctx.drawImage(img, 0, 0);
