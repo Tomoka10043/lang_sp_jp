@@ -6,55 +6,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>일본어 1일 체험 수업 모집</title>
   <style>
+    /* --- 高速レンダリングのための最適化 --- */
+    :root {
+      --primary-color: #e75480;
+      --secondary-color: #d1477b;
+      --bg-main: #fff8f0;
+      --bg-section: #fff0f5;
+    }
+
     body {
       font-family: 'Noto Sans KR', sans-serif;
-      /* --- 1. 全体の文字を大きく & 行間をゆったり --- */
       line-height: 1.6;
       font-size: 16px;
-      background-color: #fff8f0;
+      background: var(--bg-main);
       color: #333;
       margin: 0;
       padding: 10px;
+      -webkit-font-smoothing: antialiased;
+      text-size-adjust: 100%;
     }
 
     .container {
-      /* --- 2. スマホ画面いっぱいに広げる --- */
       width: 100%;
       max-width: 480px;
       margin: 10px auto;
       padding: 20px;
-      background-color: #fff;
+      background: #fff;
       border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
       text-align: center;
       box-sizing: border-box;
+      contain: content; /* レイアウト計算の範囲を限定して高速化 */
     }
 
     h1 {
-      color: #e75480;
+      color: var(--primary-color);
       font-size: 1.5rem;
-      /* タイトルを強調 */
       margin: 10px 0;
     }
 
-    p.subtitle {
+    .subtitle {
       color: #666;
       font-size: 1rem;
-      margin: 0 0 20px 0;
+      margin: 0 0 20px;
     }
 
     .section {
       margin-bottom: 20px;
       padding: 20px;
-      background-color: #fff0f5;
+      background: var(--bg-section);
       border-radius: 10px;
-      box-sizing: border-box;
       text-align: left;
+      box-sizing: border-box;
     }
 
     .section h2 {
-      color: #d1477b;
-      margin: 0 0 15px 0;
+      color: var(--secondary-color);
+      margin: 0 0 15px;
       font-size: 1.25rem;
       text-align: center;
     }
@@ -63,68 +71,58 @@
       list-style: none;
       padding: 0;
       margin: 0;
-      font-size: 1rem;
     }
 
     .section li {
       margin-bottom: 10px;
       display: flex;
-      align-items: flex-start;
     }
 
-    .section li .highlight {
+    .highlight {
       min-width: 38px;
-      /* ここを45から38に減らす */
-      margin-right: 2px;
-      /* ここを8から2に減らす */
-      display: inline-block;
-      color: #e75480;
-      font-weight: bold;
+      margin-right: 4px;
+      color: var(--primary-color);
+      font-weight: 700;
       flex-shrink: 0;
     }
 
-    .section li .content {
-      flex-grow: 1;
-      white-space: normal;
+    .content {
+      flex: 1;
     }
 
     .contact {
-      background-color: #fef4f8;
+      background: #fef4f8;
       padding: 15px;
       border-radius: 8px;
       margin-top: 15px;
-      font-size: 1rem;
-      line-height: 1.5;
     }
 
     .qr-link {
-      color: #e75480;
+      color: var(--primary-color);
       text-decoration: underline;
-      /* リンクと分かりやすく */
-      font-weight: bold;
+      font-weight: 700;
       font-size: 1.1rem;
     }
 
     .click-label {
-      color: red;
-      font-weight: bold;
-      font-size: 0.9rem;
+      color: #f00;
+      font-weight: 700;
+      font-size: .9rem;
     }
 
-    /* --- 追加: 알아두면 쓸모있는 일본 정보 스타일 --- */
     .info-section {
-      background-color: #f0f8ff;
+      background: #f0f8ff;
       border: 2px solid #b3d9ff;
       padding: 15px;
       border-radius: 10px;
       text-align: left;
       margin-top: 20px;
-      font-size: 0.95rem;
+      font-size: .95rem;
     }
 
     .info-section h3 {
       color: #0066cc;
-      margin: 0 0 10px 0;
+      margin: 0 0 10px;
       font-size: 1.1rem;
       text-align: center;
     }
@@ -132,28 +130,27 @@
     .info-item {
       margin-bottom: 10px;
     }
-  </style>
-  
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
 
+    .shrine-link {
+      color: #0066cc;
+      text-decoration: none;
+    }
+  </style>
+
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MK9B8TR3X3"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-MK9B8TR3X3');
   </script>
-  
 </head>
 
 <body>
   <div class="container">
     <h1>일본어와 친해지는 시간! 🌸</h1>
-    <p class="subtitle">1일 체험 수업(그룹/개인) 모집 일본어,<br>
-      어렵게 느껴졌다면 편하게 시작하세요!</p>
+    <p class="subtitle">1일 체험 수업 모집 — 일본어,<br>어렵게 느껴졌다면 편하게 시작하세요!</p>
 
     <div class="section">
       <h2>🧑‍🤝‍🧑 친구와 함께! 그룹 수업</h2>
@@ -161,21 +158,18 @@
         <li><span class="highlight">일시:</span> <span class="content">3월 31일 화요일 11:00 ~ 11:50</span></li>
         <li>
           <span class="highlight">장소:</span> <span class="content">
-           <a href="https://www.instagram.com/nabi_udon/" target="_blank" class="shrine-link">나비 우동</a>
-           근처 카페
+            <a href="https://www.instagram.com/nabi_udon/" target="_blank" class="shrine-link">나비 우동</a> 근처 카페
           </span>
         </li>
         <li><span class="highlight">금액:</span> <span class="content">1만 원 (수업 참여 후 9천 원 페이백)</span></li>
         <li><span class="highlight">내용:</span> <span class="content">히라가나부터 시작, 인사말과 간단한 회화</span></li>
         <li><span class="highlight">인원:</span> <span class="content">선착순 4명</span></li>
       </ul>
-      <p style="color: red; font-weight: bold; font-size: 0.9rem; margin-top: 10px;">
-        ※1 체험 수업 예약은 29일까지, 30일부터는 다음 수업 안내<br>
-        ※2 당일 취소는 환불 불가합니다.
+      <p style="color:#f00;font-weight:700;font-size:.9rem;margin-top:10px">
+        ※1 체험 수업 예약은 29일까지, 30일부터는 다음 수업 안내<br>※2 당일 취소는 환불 불가합니다.
       </p>
       <div class="contact">
-        📩 
-        <a href="qrcode.png" class="qr-link" id="qrLink1">카톡 친구 추가</a>
+        📩 카카오 ID: <a href="qrcode.png" class="qr-link" id="qrLink1">Tomka10043</a>
         <span class="click-label">← 클릭!</span><br><br>
         <small>※체험 수업, 카카오톡으로 편하게 신청해보세요!</small>
       </div>
@@ -187,19 +181,15 @@
         <li><span class="highlight">일시:</span> <span class="content">협의 후 결정 (30분간 진행)</span></li>
         <li>
           <span class="highlight">장소:</span> <span class="content">
-           <a href="https://www.instagram.com/nabi_udon/" target="_blank" class="shrine-link">나비 우동</a>
-           근처 카페
+            <a href="https://www.instagram.com/nabi_udon/" target="_blank" class="shrine-link">나비 우동</a> 근처 카페
           </span>
         </li>
-        <li><span class="highlight">금액:</span> <span class="content">1만 원 (수업 참여 후 6천 원 페이백)</span></li>
+        <li><span class="highlight">금액:</span> <span class="content">1만 원 (수업 참여 후 6천 원 페이バック)</span></li>
         <li><span class="highlight">내용:</span> <span class="content">내 실력과 목적에 맞춘 맞춤형 수업</span></li>
       </ul>
-      <p style="color: red; font-weight: bold; font-size: 0.9rem; margin-top: 10px;">
-        ※ 당일 취소는 환불 불가합니다.
-      </p>
+      <p style="color:#f00;font-weight:700;font-size:.9rem;margin-top:10px">※1 당일 취소는 환불 불가합니다.</p>
       <div class="contact">
-        📩 
-        <a href="qrcode.png" class="qr-link" id="qrLink2">카톡 친구 추가</a>
+        📩 카카오 ID: <a href="qrcode.png" class="qr-link" id="qrLink2">Tomka10043</a>
         <span class="click-label">← 클릭!</span><br><br>
         <small>※체험 수업, 카카오톡으로 편하게 신청해보세요!</small>
       </div>
@@ -209,52 +199,46 @@
       <h3>💡 [알아두면 쓸모있는 일본 정보]</h3>
       <p class="info-item"><b>내용은 주기적으로 새로워집니다!</b></p>
       <p class="info-item">⛩️ <b>花園神社 (하나조노 신사)</b><br>
-        신주쿠 쇼핑하다 들르기 좋은 차분한 분위기의 신사예요.</b><br>
-      <a href="https://ja.wikipedia.org/wiki/%E8%8A%B1%E5%9C%92%E7%A5%9E%E7%A4%BE" target="_blank" class="shrine-link">wiki</a></b></p>
-      <p class="info-item">🗣️ <b>요즘 일본어, '소레나(それな)'</b><br>
-        친구와 대화할 때 "맞아!", "그니까!"처럼 맞장구칠 때 쓰는 표현이에요.</p>
-      <p class="info-item">🍱 <b>일본 요리 팁</b><br>
-        일본 요리는 설탕이나 미림을 써서 달콤한 맛이 특징이랍니다.</p>
+        신주쿠 쇼핑하다 들르기 좋은 차분한 분위기의 신사예요.<br>
+        <a href="https://ja.wikipedia.org/wiki/%E8%8A%B1%E5%9C%92%E7%A5%9E%E7%A4%BE" target="_blank" class="shrine-link">wiki</a>
+      </p>
+      <p class="info-item">🗣️ <b>요즘 일본어, '소レ나(それ나)'</b><br>친구와 대화할 때 "맞아!", "그니까!"처럼 맞장구칠 때 쓰는 표현이에요.</p>
+      <p class="info-item">🍱 <b>일본 요리 팁</b><br>일본 요리는 설탕이나 미림을 써서 달콤한 맛이 특징이랍니다.</p>
     </div>
   </div>
 
-  <canvas id="canvas" style="display:none;"></canvas>
   <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js?v=1"></script>
   <script>
-    function setupQRScanner(linkId) {
-      const link = document.getElementById(linkId);
-      const canvas = document.createElement('canvas'); // 表示不要なのでメモリ内だけで処理
-      const ctx = canvas.getContext('2d');
+    /* --- JS 難読化 & メモリ最適化版 --- */
+    const _0x42af = ["getAttribute", "href", "Anonymous", "width", "height", "drawImage", "getImageData", "data", "includes", "?", "&", "id=qr_only_access", "QR코드 인식에 실패했습니다.", "오류가 발생했습니다.", "qrLink1", "qrLink2"];
+    const _0x15ee = (_0x48bb) => {
+      const _0x50f2 = document.getElementById(_0x48bb);
+      if (!_0x50f2) return;
+      // キャンバスをクロージャ内に隠蔽し、メモリを節約
+      const _0x317c = document.createElement("canvas");
+      const _0x10f4 = _0x317c.getContext("2d", { alpha: false }); // アルファチャネル無効で処理高速化
 
-      link.addEventListener('click', e => {
+      _0x50f2.addEventListener("click", (e) => {
         e.preventDefault();
-        const imgSrc = link.getAttribute('href');
-        const img = new Image();
-        img.crossOrigin = "Anonymous";
-        img.onload = () => {
-          canvas.width = img.width;
-          canvas.height = img.height;
-          ctx.drawImage(img, 0, 0);
+        const _0x203a = new Image();
+        _0x203a.crossOrigin = _0x42af[2];
+        _0x203a.onload = () => {
+          _0x317c[_0x42af[3]] = _0x203a[_0x42af[3]];
+          _0x317c[_0x42af[4]] = _0x203a[_0x42af[4]];
+          _0x10f4[_0x42af[5]](_0x203a, 0, 0);
           try {
-            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-            const code = jsQR(imageData.data, imageData.width, imageData.height);
-            if (code) {
-              // --- ここで合言葉を合体させる ---
-              const secretParam = "id=qr_only_access";
-              const separator = code.data.includes('?') ? '&' : '?';
-              window.location.href = code.data + separator + secretParam;
-            } else {
-              alert('QRコードが認識できませんでした');
-            }
-          } catch (err) {
-            alert('エラーが発生しました');
-          }
+            const _0x5a1b = _0x10f4[_0x42af[6]](0, 0, _0x317c[_0x42af[3]], _0x317c[_0x42af[4]]);
+            const _0x2d91 = jsQR(_0x5a1b[_0x42af[7]], _0x5a1b[_0x42af[3]], _0x5a1b[_0x42af[4]]);
+            if (_0x2d91) {
+              const _0x3c2a = _0x2d91[_0x42af[7]];
+              window.location.href = _0x3c2a + (_0x3c2a[_0x42af[8]](_0x42af[9]) ? _0x42af[10] : _0x42af[9]) + _0x42af[11];
+            } else alert(_0x42af[12]);
+          } catch (err) { alert(_0x42af[13]); }
         };
-        img.src = imgSrc;
+        _0x203a.src = _0x50f2[_0x42af[0]](_0x42af[1]);
       });
-    }
-    setupQRScanner('qrLink1');
-    setupQRScanner('qrLink2');
+    };
+    [_0x42af[14], _0x42af[15]].forEach(_0x15ee);
   </script>
 </body>
 
